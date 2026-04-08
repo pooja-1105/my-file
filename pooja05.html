@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background: #0077cc;
+            color: white;
+            padding: 20px;
+        }
+
+        .search-box {
+            margin: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px;
+            background: #0077cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Travel Guide Website</h1>
+    <p>Find destinations, budgets, and tips</p>
+</header>
+
+<section class="search-box">
+    <input type="text" id="searchInput" placeholder="Enter destination">
+    <button onclick="searchPlace()">Search</button>
+</section>
+
+<section id="result"></section>
+
+<script>
+function searchPlace() {
+    const input = document.getElementById("searchInput").value.toLowerCase().trim();
+    const result = document.getElementById("result");
+
+    if (input.includes("goa")) {
+        result.innerHTML = "Goa: Budget ₹10,000 - Beaches & nightlife";
+    } else if (input.includes("paris")) {
+        result.innerHTML = "Paris: Budget ₹80,000 - Eiffel Tower & museums";
+    } else if (input.includes("tokyo")) {
+        result.innerHTML = "Tokyo: Budget ₹70,000 - Technology & culture";
+    } else {
+        result.innerHTML = "Destination not found. Try Goa, Paris, or Tokyo.";
+    }
+}
+</script>
+
+</body>
+</html>
